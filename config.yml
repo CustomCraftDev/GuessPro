@@ -1,0 +1,27 @@
+# @author DieFriiks / CustomCraftDev / undeaD_D
+# @link www.pokemon-online.xyz
+# @github https://github.com/CustomCraftDev/GuessPro
+debug: false
+
+msg:
+  nopermission: '&E[GuessPro]&4 you dont have permission to that command'
+  disable: '&E[GuessPro]&4 was disabled'
+  reset: '&E[GuessPro]&4 was reset'
+  reload: '&E[GuessPro]&4 was reloaded'
+  countdownmsg: '&E[GuessPro]&8 The game will start in %time% seconds'
+  wronganswer: '&E[GuessPro]&8 You have %count% more guesses'
+  lose: '&E[GuessPro]&4 You lost this round'
+  win: '&E[GuessPro]&8 %player% got the correct answer'
+  skip: '&E[GuessPro]&8 %player% has skipped this round'
+  full: '&E[GuessPro]&4 this Arena is already full, try to join another one'
+  started: '&E[GuessPro]&4 This Arena has already started, try to join another one'
+  leave: '&E[GuessPro]&8 You have left this Arena'
+  report: '&E[GuessPro]&8 Thanks for reporting the error, we will check it as soon as possible' 
+
+settings:
+  rounds: 10
+  countdownsec: 30
+  reward:
+    1: '100, 90, 80'
+    2: '70, 60, 50'
+    3: '40, 30, 20'
