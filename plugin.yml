@@ -1,0 +1,14 @@
+ name: ProfessionalGuesser
+ version: 1.0
+ description: Requested Plugin
+ author: DieFriiks
+ authors: [undeaD_D] 
+ website: http://www.pokemon-online.xyz/
+ 
+ main: xyz.diefriiks.guesspro.GuessPro
+ database: false
+ 
+ commands:
+   gp:
+     description: Gold2XP Admin Command
+     usage: /gp <item/admin/reset/reload/disable>
