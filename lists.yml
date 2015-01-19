@@ -1,0 +1,15 @@
+info:
+  - 'The chance of getting the same question, relies on the amount of questions you write down here'
+  - 'the more questions, the lesser the chance'
+  - ' questions and answers do infact support colorcodes'
+  - 'questions get choosen randomly everytime'
+  - 'if you change a question dont forget to reload the plugin'
+  - 'increment the total count of questions if you add questions, or else it wont work'
+  - 'you should at least have 200 questions or more, if not the game might get too easy :/'
+
+questions:
+  total: 4
+  1: 'answer, this is the default tip 1, this is the default tip 2, this is the default tip 3'
+  2: 'undeaD_D, name of the author, he is not alive, his bot is named undeaD_Bot'
+  3: 'Notch, creator of Minecraft,  No its not Jeb, his real name is Markus Persson'
+  4: 'zombie pigman, the mob is PASSIVE,  the mob does hold a golden sword, it sounds like a pig'
