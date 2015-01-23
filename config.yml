@@ -25,3 +25,16 @@ settings:
     1: '100, 90, 80'
     2: '70, 60, 50'
     3: '40, 30, 20'
+
+questions:
+  total: 4
+  1: 'answer, this is the default tip 1, this is the tip 2, this is the tip 3'
+  2: 'undeaD_D, name of the author, he is not alive, his bot is named undeaD_Bot'
+  3: 'Notch, creator of Minecraft,  No its not Jeb, his real name is Markus Persson'
+  4: 'zombie pigman, the mob is PASSIVE,  the mob does hold a golden sword, it sounds like a pig'
+
+arenas:
+  - 'arena-name, arena-spawn, min-player, max-player'
+
+reports:
+  - ''
