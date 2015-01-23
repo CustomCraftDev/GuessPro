@@ -1,0 +1,86 @@
+package xyz.diefriiks.guesspro;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerLoginEvent;
+
+public class updater implements Listener{
+	private GuessPro plugin;
+	private int version = 1;
+	
+	
+	/*
+	 *  Constructor.
+	 */
+	@SuppressWarnings("deprecation")
+	public updater(GuessPro plugin) {
+		this.plugin = plugin;
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
+		check();
+		if(plugin.update) {
+		    for (Player p : plugin.getServer().getOnlinePlayers()) {
+		    	check_p(p);
+		    }
+		}
+	}
+	
+	
+	/*
+	 *  Login event.
+	 */
+	@EventHandler
+	public void login(PlayerLoginEvent e) {
+		if(plugin.update) {
+			check_p(e.getPlayer());
+		}
+	}
+	
+	
+	/*
+	 *  Check function.
+	 */
+	private void check_p(Player p) {
+		if(p.hasPermission("gp.update")) {
+		   	p.sendMessage(ChatColor.RED + plugin.prefix + " -------------------------------------------------");
+		   	p.sendMessage(ChatColor.RED + plugin.prefix + " GuessPro is outdated. Get the new Version here:");
+		   	p.sendMessage(ChatColor.RED + plugin.prefix + " http://www.pokemon-online.xyz/plugin");
+		   	p.sendMessage(ChatColor.RED + plugin.prefix + " -------------------------------------------------");
+		}
+	}
+	
+	
+	/*
+	 *  Check function.
+	 */
+	private void check() {
+		String sourceLine = null;
+        try {
+	        URL url = new URL("http://www.pokemon-online.xyz/plugin");
+	        BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+	        String str;
+	        while ((str = in.readLine()) != null) {
+	            if(str.startsWith("guesspro:")) {
+	            	sourceLine = str.split(":")[1];
+	            	break;
+	            }
+	        }
+        } catch (IOException e) {e.printStackTrace();}
+        
+	    if(sourceLine != null && Integer.parseInt(sourceLine) != version  ){
+	    	plugin.update  = true;
+	    	plugin.say(plugin.prefix + " -------------------------------------------------");
+	    	plugin.say(plugin.prefix + " GuessPro is outdated. Get the new Version here:");
+	    	plugin.say(plugin.prefix + " http://www.pokemon-online.xyz/plugin/");
+	    	plugin.say(plugin.prefix + " -------------------------------------------------");
+	    }
+		
+	}
+
+}
